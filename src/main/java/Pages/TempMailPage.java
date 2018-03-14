@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class TempMailPage extends MainPage {
 
+
+
     @FindBy(css = "[id='click-to-change']")
     private WebElement changeButton;
 

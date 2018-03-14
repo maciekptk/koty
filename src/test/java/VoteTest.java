@@ -2,10 +2,6 @@ import org.testng.annotations.Test;
 
 public class VoteTest extends MainTest {
 
-//    String usernameTemplate = "testowy";
-//    int usernameNumber = 42;
-//    String username = usernameTemplate + usernameNumber;
-//    String email = username + "@carbtc.net";
 
     @Test
     public void shouldVote() {
@@ -13,38 +9,47 @@ public class VoteTest extends MainTest {
 
             String usernameTemplate = "testowy";
             String username = usernameTemplate + usernameNumber;
-            String email = username + "@carbtc.net";
+            //String email = username + "@carbtc.net";
+//            String email = changeMailPage.getNewEmail();
 
-            week9Page.openWeek9Page()
+
+//            week9Page.openWeek9Page()
+//                    .scrollToShila()
+//                    .scrollByUp()
+//                    .clickVoteButton()
+//                    .inputEmail(email)
+//                    .clickSubmitButton()
+//                    .waitForCloseButton()
+//                    .clickCloseButton() //dziala
+//                    .openTempMail()
+//                    .clickChangeButton()
+//                    .enterMailAddress(username)
+//                    .clickSubmitButton()
+//                    .clickRefreshButton()
+//                    .openEmail()
+//                    .clickEmailLink()
+//                    .closeTabs();
+//        }
+//    }
+
+            tempMailPage.openTempMail()
+                    .clickChangeButton()
+                    .enterMailAddress(username)
+                    .selectDomain()
+                    .clickSubmitButton()
+                    .openLandingPage()
                     .scrollToShila()
                     .scrollByUp()
                     .clickVoteButton()
-                    .inputEmail(email)
+                    .inputEmail()
                     .clickSubmitButton()
                     .waitForCloseButton()
-                    .clickCloseButton() //dziala
-                    .openTempMail()
-                    .clickChangeButton()
-                    .enterMailAddress(username)
-                    .clickSubmitButton()
-                    .clickRefreshButton()
-                    .openEmail()
-                    .clickEmailLink()
-                    .closeTabs();
+                    .clickCloseButton();
+
+
+//                    .clickRefreshButton()
+//                    .openEmail()
+//                    .clickEmailLink();
         }
     }
 }
-
-
-//    public void shouldCheckEmail(){
-//        tempMailPage.openTempMail()
-//                .clickChangeButton()
-//                .enterMailAddress(username)
-//                .clickSubmitButton()
-//                .clickRefreshButton()
-//                .openEmail()
-//                .clickEmailLink();
-//
-//
-//    }
-//}

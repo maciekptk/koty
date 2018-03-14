@@ -18,13 +18,19 @@ public class VotePage extends MainPage {
     @FindBy(css = "[id='gallery-success-modal-sended'] .close")
     private WebElement closeButton;
 
+    ChangeMailPage changeMailPage;
+
     public VotePage(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public VotePage inputEmail(String email){
-        emailField.sendKeys(email);
+    public String newEmail(){
+        return changeMailPage.getEmail();
+    }
+
+    public VotePage inputEmail(){
+        emailField.sendKeys(newEmail());
         return this;
     }
 
